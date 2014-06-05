@@ -19,6 +19,9 @@ let g:UltiSnipsExpandTrigger="<C-j>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 
+" Snippets are separated from the engine
+Plugin 'honza/vim-snippets'
+
 " Command T plugin
 Plugin 'wincent/Command-T'
 "let g:CommandTMatchWindowAtTop = 1
