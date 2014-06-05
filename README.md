@@ -4,6 +4,7 @@ dotfiles
 My dot files
 
 Run:
+    
     cd ~/
     git clone https://github.com/focs/dotfiles .dotfiles
     cd .dotfiles
