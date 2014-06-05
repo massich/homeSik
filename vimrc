@@ -48,8 +48,12 @@ Plugin 'nathanaelkane/vim-indent-guides'
 "Bundle 'a.vim'
 
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
-let g:LatexBox_latexmk_options = "-xelatex -pdf -pvc"
-"-pdfps"
+let g:LatexBox_latexmk_options = "-xelatex -pdf"
+" From https://github.com/LaTeX-Box-Team/LaTeX-Box/issues/105
+let g:LatexBox_latexmk_async=1
+let g:LatexBox_quickfix=2
+let g:LatexBox_latexmk_preview_continuously=1 
+"-pdfps -pvc"
 
 "Conection with ipython
 Plugin 'ivanov/vim-ipython'
