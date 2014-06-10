@@ -50,7 +50,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'LaTeX-Box-Team/LaTeX-Box'
 let g:LatexBox_latexmk_options = "-xelatex -pdf -pvc"
 " From https://github.com/LaTeX-Box-Team/LaTeX-Box/issues/105
-let g:LatexBox_latexmk_async=0 "ho deia l'error del vim...
+let g:LatexBox_latexmk_async=1 "ho deia l'error del vim...
 let g:LatexBox_quickfix=2
 let g:LatexBox_latexmk_preview_continuously=1 
 "-pdfps -pvc"
