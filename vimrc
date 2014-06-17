@@ -186,3 +186,7 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+" airline configuration
+set showcmd "Show what you are tiping in normal mode
+set laststatus=2 "workaround for showing airline when no split
+set noshowmode "remove the old status bar -- INSERT --
