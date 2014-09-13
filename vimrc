@@ -196,3 +196,9 @@ set noshowmode "remove the old status bar -- INSERT --
 " search highligting toggle
 map <F12> :set nohls<CR>:let @s = @/<CR>:let @/ = ""<CR>:set hls<CR>
 map <SHIFT><F12> :let @/=@s<CR>
+
+" latex stuff
+filetype plugin on
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+
