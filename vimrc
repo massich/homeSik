@@ -176,6 +176,8 @@ vnoremap <Down> gj
 vnoremap <Up> gk
 inoremap <Down> <C-o>gj
 inoremap <Up> <C-o>gk
+inoremap jk <esc>
+inoremap kj <esc>
 
 "set guifont=DejaVu\ Sans\ Mono\ 10
 set guifont=Monospace\ 12
@@ -190,3 +192,7 @@ noremap <Right> <NOP>
 set showcmd "Show what you are tiping in normal mode
 set laststatus=2 "workaround for showing airline when no split
 set noshowmode "remove the old status bar -- INSERT --
+
+" search highligting toggle
+map <F12> :set nohls<CR>:let @s = @/<CR>:let @/ = ""<CR>:set hls<CR>
+map <SHIFT><F12> :let @/=@s<CR>
