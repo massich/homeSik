@@ -64,7 +64,7 @@ Plugin 'ivanov/vim-ipython'
 Plugin 'butane.vim'
 
 "Increment indexes
-Plugin 'increment.vim'
+"Plugin 'increment.vim'
 
 "Search and replace on multiple files
 "Bundle 'EasyGrep'
@@ -149,7 +149,7 @@ set colorcolumn=80
 set wildmenu
 
 " Change leader key to ","
-"let mapleader = ","
+let mapleader = ","
 
 
 nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
