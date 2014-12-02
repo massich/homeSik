@@ -80,6 +80,15 @@ Plugin 'Raimondi/delimitMate'
 " use git from vim
 Plugin 'tpope/vim-fugitive'
 
+" use vim-exchange to swap words, text, etc..
+Plugin 'tommcdo/vim-exchange'
+
+" Easy motion
+Plugin 'Lokaltog/vim-easymotion'
+
+" Python Stuff
+Plugin 'scrooloose/syntastic'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -124,8 +133,11 @@ let g:indent_guides_auto_colors = 1
 " To avoid clang message of not compiling small files
 set cmdheight=2
 
-" Show line number
-set nu
+" Show line number 
+" relative when normal mode, absolute otherwise
+set relativenumber
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 
 " Highlight current line
 set cursorline
@@ -137,7 +149,7 @@ set colorcolumn=80
 set wildmenu
 
 " Change leader key to ","
-let mapleader = ","
+"let mapleader = ","
 
 
 nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
