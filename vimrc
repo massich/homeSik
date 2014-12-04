@@ -55,9 +55,6 @@ let g:LatexBox_quickfix=2
 let g:LatexBox_latexmk_preview_continuously=1 
 "-pdfps -pvc"
 
-"Conection with ipython
-Plugin 'ivanov/vim-ipython'
-
 "Bundle 'Conque-Shell'
 
 "Close buffer plugin
@@ -70,24 +67,36 @@ Plugin 'butane.vim'
 "Bundle 'EasyGrep'
 Plugin 'dkprice/vim-easygrep'
 
-" Lets see how this works
-" Bundle 'Powerline'
-Plugin 'bling/vim-airline'
 
 " Add closing brakeds and quotes
 Plugin 'Raimondi/delimitMate'
 
 " use git from vim
 Plugin 'tpope/vim-fugitive'
+Plugin 'gitv'
+Plugin 'airblade/vim-gitgutter'
+
+" Python Stuff
+Plugin 'vim-ipython' " conection with ipython
+Plugin 'Syntastic'   " PEP-8 style checking
 
 " use vim-exchange to swap words, text, etc..
 Plugin 'tommcdo/vim-exchange'
 
-" Easy motion
+" Navigation Stuff
 Plugin 'Lokaltog/vim-easymotion'
-
-" Python Stuff
-Plugin 'scrooloose/syntastic'
+Plugin 'Tagbar'
+nmap <leader>t :TagbarToggle<CR>
+Plugin 'TaskList.vim'
+map <leader>td <Plug>TaskList
+Plugin 'ZoomWin'
+Plugin 'Gundo'
+map <Ctrl-U> :GundoToggle<CR>
+Plugin 'ack.vim'
+nmap <leader>a <Esc>:Ack!
+" Bundle 'Powerline'
+Plugin 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
