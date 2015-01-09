@@ -67,6 +67,12 @@ Plugin 'butane.vim'
 "Bundle 'EasyGrep'
 Plugin 'dkprice/vim-easygrep'
 
+""" Editing Stuff -- Vim as generic IDE
+" Generic edtion
+Plugin 'surround.vim' " To insert '', [], (), {}... surrounding the selection
+Plugin 'abolish.vim' " camelCase snake_case search insensitivity (and more)
+Plugin 'repeat.vim'
+Plugin 'tpope/vim-repeat' " remap . for plugins
 
 " Add closing brakeds and quotes
 Plugin 'Raimondi/delimitMate'
@@ -79,13 +85,15 @@ Plugin 'airblade/vim-gitgutter'
 " Python Stuff
 Plugin 'vim-ipython' " conection with ipython
 Plugin 'Syntastic'   " PEP-8 style checking
+Plugin 'plantuml-syntax' " UML markdown text
 
 " use vim-exchange to swap words, text, etc..
 Plugin 'tommcdo/vim-exchange'
 
+
 " Navigation Stuff
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'Tagbar'
+"Plugin 'Tagbar'
 nmap <leader>t :TagbarToggle<CR>
 Plugin 'TaskList.vim'
 map <leader>td <Plug>TaskList
@@ -97,6 +105,10 @@ nmap <leader>a <Esc>:Ack!
 " Bundle 'Powerline'
 Plugin 'bling/vim-airline'
 "let g:airline_powerline_fonts = 1
+
+" Spreatsheed stuff
+Plugin 'Tabular'
+Plugin 'dhruvasagar/vim-table-mode'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -223,3 +235,8 @@ filetype plugin on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
