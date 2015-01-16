@@ -83,7 +83,7 @@ Plugin 'gitv'
 Plugin 'airblade/vim-gitgutter'
 
 " Python Stuff
-Plugin 'vim-ipython' " conection with ipython
+Plugin 'ivanov/vim-ipython' " conection with ipython
 Plugin 'Syntastic'   " PEP-8 style checking
 Plugin 'plantuml-syntax' " UML markdown text
 
@@ -93,10 +93,10 @@ Plugin 'tommcdo/vim-exchange'
 
 " Navigation Stuff
 Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'Tagbar'
-nmap <leader>t :TagbarToggle<CR>
+Plugin 'Tagbar'
+nmap <F11> :TagbarToggle<CR>
 Plugin 'TaskList.vim'
-map <leader>td <Plug>TaskList
+map <sHFIT><F11> <Plug>TaskList
 Plugin 'ZoomWin'
 Plugin 'Gundo'
 map <Ctrl-U> :GundoToggle<CR>
