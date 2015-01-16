@@ -73,22 +73,21 @@ Plugin 'surround.vim' " To insert '', [], (), {}... surrounding the selection
 Plugin 'abolish.vim' " camelCase snake_case search insensitivity (and more)
 Plugin 'repeat.vim'
 Plugin 'tpope/vim-repeat' " remap . for plugins
-
-" Add closing brakeds and quotes
-Plugin 'Raimondi/delimitMate'
+Plugin 'tommcdo/vim-exchange' " use vim-exchange to swap words, text, etc..
+Plugin 'Raimondi/delimitMate' " Add closing brakeds and quotes
 
 " use git from vim
 Plugin 'tpope/vim-fugitive'
 Plugin 'gitv'
 Plugin 'airblade/vim-gitgutter'
 
+"" Languages
+Plugin 'rykka/riv.vim' " reST
+
 " Python Stuff
 Plugin 'ivanov/vim-ipython' " conection with ipython
 Plugin 'Syntastic'   " PEP-8 style checking
 Plugin 'plantuml-syntax' " UML markdown text
-
-" use vim-exchange to swap words, text, etc..
-Plugin 'tommcdo/vim-exchange'
 
 
 " Navigation Stuff
