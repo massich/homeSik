@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Plugin 'gmarik/Vundle.vim'
 
 " My bundles here:
@@ -34,10 +34,6 @@ let g:ycm_confirm_extra_conf = 0
 "let g:ycm_key_list_previous_completion=['<Up>']
 "YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-"Bundle 'scrooloose/Syntastic'
-"Bundle 'clang-complete'
-"Bundle 'highlight_current_line.vim'
-
 "Plugin to visualize tabs
 Plugin 'nathanaelkane/vim-indent-guides'
 "let g:indent_guides_auto_colors = 0
@@ -52,7 +48,7 @@ let g:LatexBox_latexmk_options = "-xelatex -pdf -pvc"
 " From https://github.com/LaTeX-Box-Team/LaTeX-Box/issues/105
 let g:LatexBox_latexmk_async=1 "ho deia l'error del vim...
 let g:LatexBox_quickfix=2
-let g:LatexBox_latexmk_preview_continuously=1 
+let g:LatexBox_latexmk_preview_continuously=1
 "-pdfps -pvc"
 
 "Bundle 'Conque-Shell'
@@ -61,7 +57,7 @@ let g:LatexBox_latexmk_preview_continuously=1
 Plugin 'butane.vim'
 
 "Increment indexes
-"Plugin 'increment.vim'
+Plugin 'increment.vim'
 
 "Search and replace on multiple files
 "Bundle 'EasyGrep'
@@ -74,7 +70,7 @@ Plugin 'abolish.vim' " camelCase snake_case search insensitivity (and more)
 Plugin 'repeat.vim'
 Plugin 'tpope/vim-repeat' " remap . for plugins
 Plugin 'tommcdo/vim-exchange' " use vim-exchange to swap words, text, etc..
-Plugin 'Raimondi/delimitMate' " Add closing brakeds and quotes
+"Plugin 'Raimondi/delimitMate' " Add closing brakeds and quotes
 
 " use git from vim
 Plugin 'tpope/vim-fugitive'
@@ -86,8 +82,11 @@ Plugin 'rykka/riv.vim' " reST
 
 " Python Stuff
 Plugin 'ivanov/vim-ipython' " conection with ipython
-Plugin 'Syntastic'   " PEP-8 style checking
+Plugin 'scrooloose/Syntastic'   " PEP-8 style checking
 Plugin 'plantuml-syntax' " UML markdown text
+"Bundle 'clang-complete'
+"Bundle 'highlight_current_line.vim'
+
 
 
 " Navigation Stuff
@@ -142,7 +141,8 @@ if has("gui_running")
   set guioptions-=L  "remove left-hand scroll bar
 else
   "colorscheme darkblue
-  colorscheme zenburn
+  "colorscheme zenburn
+  colorscheme vividchalk
 endif
 
 let g:indent_guides_enable_on_vim_startup = 1
@@ -153,7 +153,7 @@ let g:indent_guides_auto_colors = 1
 " To avoid clang message of not compiling small files
 set cmdheight=2
 
-" Show line number 
+" Show line number
 " relative when normal mode, absolute otherwise
 set relativenumber
 autocmd InsertEnter * :set number
@@ -171,7 +171,24 @@ set wildmenu
 " Change leader key to ","
 let mapleader = ","
 
+"" IDE-related configuration
+function! Preserve(command)
+  " Preparation: save last search, and cursor position.
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  " Do the business:
+  execute a:command
+  " Clean up: restore previous search history, and cursor position
+  let @/=_s
+  call cursor(l, c)
+endfunction
 
+"remove spaces at the end of the line
+nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
+" auto-indent the current file
+nmap _= :call Preserve("normal gg=G")<CR>
+" YCM go to definition
 nnoremap <leader>gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "Buffer navigation
@@ -190,7 +207,9 @@ noremap <leader>bx :Bclose!<CR>     " Close the buffer & discard changes.
 nnoremap <silent> <Leader>bb :CommandTBuffer<CR>
 
 "Able and disable spellcheck in english
-map <F5> :setlocal spell! spelllang=en_gb<CR>
+set spell spelllang=en_gb
+noremap <F2> :setlocal spell! spelllang=en_gb<CR>
+nmap <leader>s :setlocal spell! spelllang=en_gb<CR>
 
 "spaces instead of tab
 set expandtab
@@ -198,6 +217,10 @@ set tabstop=2
 set shiftwidth=2
 
 "moving in warped lines
+nnoremap H g0
+nnoremap L g$
+vnoremap H g0
+vnoremap L g$
 nnoremap j gj
 nnoremap k gk
 vnoremap j gj
@@ -227,7 +250,6 @@ set noshowmode "remove the old status bar -- INSERT --
 
 " search highligting toggle
 map <F12> :set nohls<CR>:let @s = @/<CR>:let @/ = ""<CR>:set hls<CR>
-map <SHIFT><F12> :let @/=@s<CR>
 
 " latex stuff
 filetype plugin on
