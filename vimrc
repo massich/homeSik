@@ -70,7 +70,7 @@ Plugin 'abolish.vim' " camelCase snake_case search insensitivity (and more)
 Plugin 'repeat.vim'
 Plugin 'tpope/vim-repeat' " remap . for plugins
 Plugin 'tommcdo/vim-exchange' " use vim-exchange to swap words, text, etc..
-"Plugin 'Raimondi/delimitMate' " Add closing brakeds and quotes
+Plugin 'Raimondi/delimitMate' " Add closing brakeds and quotes
 
 " use git from vim
 Plugin 'tpope/vim-fugitive'
@@ -141,8 +141,9 @@ if has("gui_running")
   set guioptions-=L  "remove left-hand scroll bar
 else
   "colorscheme darkblue
-  "colorscheme zenburn
-  colorscheme vividchalk
+  "colorscheme blue
+  colorscheme zenburn
+  "colorscheme vividchalk
 endif
 
 let g:indent_guides_enable_on_vim_startup = 1
