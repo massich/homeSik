@@ -8,6 +8,8 @@ Run:
     cd ~/
     git clone https://github.com/focs/dotfiles .dotfiles
     cd .dotfiles
-    ./bootstrap.sh
+    ./install
 
-To create symlinks from your home directory to the dot files.
+To create symlinks from your home directory to the dot files. See dotbot 
+README.md for more info.
+
