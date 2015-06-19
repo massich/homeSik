@@ -29,3 +29,15 @@ https://github.com/majutsushi/tagbar
 https://github.com/szw/vim-ctrlspace#the-idea
 https://github.com/terryma/vim-multiple-cursors
 https://github.com/vim-scripts/ZoomWin
+
+
+
+
+http://yannesposito.com/Scratch/en/blog/Vim-as-IDE/
+https://github.com/yogsototh/vimrc/blob/master/vimrc
+https://gist.github.com/tarruda/5158535
+https://github.com/epeli/slimux
+https://github.com/atweiden/dotfiles/blob/master/_gitconfig
+https://github.com/atweiden/dotfiles
+https://github.com/roryokane/dotvim/blob/master/vimrc#L27
+https://github.com/nicknisi/dotfiles
